@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preq_calibrages_equipements', function (Blueprint $table) {
+        Schema::create('preq_calibrages_equips', function (Blueprint $table) {
             $table->id();
             $table->string("intitule_calibrage");
             $table->integer("equipement_id")->index();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preq_calibrages_equipements');
+        Schema::dropIfExists('preq_calibrages_equips');
     }
 };

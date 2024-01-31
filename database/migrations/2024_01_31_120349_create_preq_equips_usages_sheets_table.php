@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preq_equipements_usages_sheets', function (Blueprint $table) {
+        Schema::create('preq_equips_usages_sheets', function (Blueprint $table) {
             $table->id();
             $table->integer("caracteristique_id");
             $table->integer("equipement_id");
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preq_equipements_usages_sheets');
+        Schema::dropIfExists('preq_equips_usages_sheets');
     }
 };

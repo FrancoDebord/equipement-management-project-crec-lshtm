@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preq_requests_caracteristiques', function (Blueprint $table) {
+        Schema::create('preq_caract_equips_liaison', function (Blueprint $table) {
             $table->id();
             $table->integer("caracteristique_id")->index();
-            $table->integer("request_id")->index();
+            $table->integer("equipement_id")->index();
             $table->string("valeur");
             $table->enum("user_approval", ["OK","NOT OK","N/A"]);
             $table->timestamps();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preq_requests_caracteristiques');
+        Schema::dropIfExists('preq_caract_equips_liaison');
     }
 };

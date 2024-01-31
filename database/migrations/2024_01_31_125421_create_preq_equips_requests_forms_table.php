@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preq_equipements_requests_forms', function (Blueprint $table) {
+        Schema::create('preq_equips_requests_forms', function (Blueprint $table) {
             $table->id();
             $table->string("requester_name");
             $table->integer("departement_id")->index();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preq_equipements_requests_forms');
+        Schema::dropIfExists('preq_equips_requests_forms');
     }
 };

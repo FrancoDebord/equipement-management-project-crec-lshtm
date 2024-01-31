@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preq_caracteristiques_equipements_liaison', function (Blueprint $table) {
+        Schema::create('params_calibrages_valeurs', function (Blueprint $table) {
             $table->id();
-            $table->integer("caracteristique_id")->index();
-            $table->integer("equipement_id")->index();
-            $table->string("valeur");
-            $table->enum("user_approval", ["OK","NOT OK","N/A"]);
+            $table->integer("num_reading");//1,2, 3, Le numéro de lecture 
+            $table->time("heure_observation");
+            $table->integer("calibrage_id")->index();
+            $table->string("valeur_observee");
+            $table->string("valeur_reference");
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preq_caracteristiques_equipements_liaison');
+        Schema::dropIfExists('params_calibrages_valeurs');
     }
 };
